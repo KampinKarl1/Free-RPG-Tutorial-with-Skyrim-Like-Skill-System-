@@ -26,3 +26,5 @@ You could get your player to level up by calling SkillUser.GainExperience (float
 however that information is forthcoming with my next tutorials.
 
 Let me know if you have any problems (or suggestions).
+
+Watch the videos here: https://www.youtube.com/playlist?list=PL8uuriBnyf5n48pmtnL0jKCl7ITz_W5To to help you get these systems put together.
