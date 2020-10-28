@@ -9,7 +9,9 @@ without those, this project won't work.
 Really important that you clone in or at least copy the InputManager.asset into your ProjectSettings folder once you've got Explosive LLC's RPG Animation pack. It'll take away a lot of the issues there.
 
 --------------------More issues with Animation pack:-----------------------------
+
 LAYERS!
+
 Make sure you add the TempCast layer (index 8) and Walkable layer (index 9) to your project.
 I'm not sure that the Shadow and Collide tags are used.
 
