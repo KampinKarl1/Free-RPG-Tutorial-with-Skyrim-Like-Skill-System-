@@ -12,6 +12,8 @@ Really important that you clone in or at least copy the InputManager.asset into 
 
 LAYERS!
 
+Fix the Input Manager - copy or clone this: https://github.com/KampinKarl1/Free-RPG-Tutorial-with-Skyrim-Like-Skill-System-/blob/main/ProjectSettings/InputManager.asset
+
 Make sure you add the TempCast layer (index 8) and Walkable layer (index 9) to your project.
 I'm not sure that the Shadow and Collide tags are used.
 
@@ -28,3 +30,8 @@ however that information is forthcoming with my next tutorials.
 Let me know if you have any problems (or suggestions).
 
 Watch the videos here: https://www.youtube.com/playlist?list=PL8uuriBnyf5n48pmtnL0jKCl7ITz_W5To to help you get these systems put together.
+
+
+#How to Fix Explosive RPG Animation Pack
+#Explosive RPG Anim Pack Input Fix
+
