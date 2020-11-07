@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour
     //--------------------------
     [SerializeField] private SkyboxChanger skyboxChanger = null;
     [SerializeField] private SkillsSelectionControl skillsControl = null;
+    [SerializeField] private CombatControl combatControl = null;
     //--------------------------
 
     //--------------------------
@@ -15,18 +16,18 @@ public class InputController : MonoBehaviour
     [SerializeField] private KeyCode skyboxKey = KeyCode.Delete;
     //--------------------------
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
+        //Targeting
+        if (Input.GetAxisRaw("Target") != 0)
+            combatControl.LookForTarget();
+            
         //Skills
         if (Input.GetKey(scrollRight) && skillsControl)
             skillsControl.SelectElementRight();
         if (Input.GetKey(scrollLeft) && skillsControl)
             skillsControl.SelectElementLeft();
+            
         //Skybox
         if (Input.GetKeyDown(skyboxKey) && skyboxChanger)
             skyboxChanger.ChangeSkybox();
