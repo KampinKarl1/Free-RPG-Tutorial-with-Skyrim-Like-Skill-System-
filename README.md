@@ -46,6 +46,7 @@ Changes on Explosive RPG Scripts:
 
   //--------------ADD THIS TO RPGCharacterMovementControllerFREE.cs SCRIPT!-----------------
         //Targeting Properties
+        
         private Vector3 StrafeTarget => rpgCharacterController.HasTarget ? rpgCharacterController.TargetPos : CurrentLookDir;
         private Vector3 CurrentLookDir =>  new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) + transform.position;
         
@@ -53,8 +54,10 @@ Changes on Explosive RPG Scripts:
           Strafing(StrafeTarget);
           
   //--------------ADD THIS TO RPGCharacterControllerFREE.cs SCRIPT!-----------------
+  
         public void SetTarget(GameObject t) => target = t;
         public bool HasTarget => target != null;
         public GameObject GetTarget() => target;
         public Vector3 TargetPos => target.transform.position;
-        //--------------------------------------------------------------------------------
+        
+   //--------------------------------------------------------------------------------
