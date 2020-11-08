@@ -13,3 +13,21 @@ Add:
 Find calls to "Strafing" by using 'ctrl/cmd + f : Strafing('
 
 Change the parameter to Strafing (StrafeTarget);
+
+
+Changes to RPGCharacterControllerFREE.cs
+
+Change target from public to private.
+
+         private GameObject target = null;
+
+Add this under the target variable (or whereever).
+
+        //--------------ADD THIS TO RPGCharacterControllerFREE.cs SCRIPT!-----------------
+        
+        public void SetTarget(GameObject t) => target = t;
+        public bool HasTarget => target != null;
+        public GameObject GetTarget() => target;
+        public Vector3 TargetPos => target.transform.position;
+        
+        //--------------------------------------------------------------------------------
