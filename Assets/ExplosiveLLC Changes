@@ -1,0 +1,15 @@
+Changes to RPGCharacterMovementControllerFREE.cs
+
+Under the variables already included (around line 70)
+
+Add:
+//Targeting Properties
+
+        private Vector3 StrafeTarget => rpgCharacterController.HasTarget ? rpgCharacterController.TargetPos : CurrentLookDir;
+        private Vector3 CurrentLookDir =>  transform.forward + transform.position; 
+        //to make the char. move around in a combat stance in the direction you're facing: 
+        //private Vector3 CurrentLookDir =>  new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) + transform.position; 
+        
+Find calls to "Strafing" by using 'ctrl/cmd + f : Strafing('
+
+Change the parameter to Strafing (StrafeTarget);
