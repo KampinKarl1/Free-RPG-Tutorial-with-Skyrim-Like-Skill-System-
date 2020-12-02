@@ -1,5 +1,9 @@
 # Free-RPG-Tutorial-with-Skyrim-Like-Skill-System-
 
+---
+Please get the following free assets FIRST, add them to a project, THEN clone this project. Otherwise you'll have a bunch of broken stuff.
+---
+
 Make sure to get Synty Studios “POLYGON - Starter Pack”, https://assetstore.unity.com/packages/3d/props/polygon-starter-pack-156819  
 and
 Explosive LLC “RPG Character Mecanim Animation Pack FREE”, https://assetstore.unity.com/packages/3d/animations/rpg-character-mecanim-animation-pack-free-65284 
