@@ -6,15 +6,18 @@ public class SkillsSelectionControl : MonoBehaviour
 {
     [SerializeField] ScrollRect scrollRect = null;
     [SerializeField] Transform cameraTransform = null;
+    [SerializeField] GameObject skillsPanel = null;
 
     Button[] buttons = null;
 
-    enum Direction { Left, Right }    
+    private enum Direction { Left, Right }    
 
     private int currentSelection = 0;
     [SerializeField] private float scrollSpeed = 5f;
     [SerializeField] private float timeBetweenSelections = .25f;
     private float cooldown = 0;
+
+    public bool SkillPanelOpen => skillsPanel.activeSelf;
 
     public void InitializeSkillInput(GameObject [] skillObjects)
     {
@@ -40,6 +43,7 @@ public class SkillsSelectionControl : MonoBehaviour
             cooldown -= Time.deltaTime;
     }
 
+    #region Skill tree selection
     public void SelectElementRight() => SelectElement(Direction.Right);
 
     public void SelectElementLeft() => SelectElement(Direction.Left);
@@ -78,8 +82,13 @@ public class SkillsSelectionControl : MonoBehaviour
         StartCoroutine(AnimateToPos(index));
     }
 
+    private float GetSelectedButtonPos(int index) => (float)index / (float)buttons.Length;
+    #endregion
     IEnumerator AnimateToPos(int index) 
     {
+        if (!scrollRect.gameObject.activeSelf)
+            yield return null;
+
         float targetXPos = GetSelectedButtonPos(index);
         float distFromTarget = 1f;
 
@@ -95,5 +104,8 @@ public class SkillsSelectionControl : MonoBehaviour
         }
     }
 
-    private float GetSelectedButtonPos(int index) => (float)index / (float)buttons.Length;    
+    #region UI Control
+    public void OpenSkills() => skillsPanel.SetActive(true);
+    public void CloseSkills() => skillsPanel.SetActive(false);
+    #endregion
 }

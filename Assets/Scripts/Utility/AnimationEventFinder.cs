@@ -1,27 +1,49 @@
-﻿using System.Collections;
+﻿
+#if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class AnimationEventFinder : MonoBehaviour
 {
-    [SerializeField] List<AnimationClip> punchAnimations = new List<AnimationClip>();
-    [SerializeField] List<AnimationClip> kickAnimations = new List<AnimationClip>();
+    [SerializeField] GameObject[] animationFBX_Array = null;
 
-    [SerializeField] private Object punchObject = null;
-    [SerializeField] private Object kickObject = null;
+    [Header("Leave at 0 or empty except to pass to event")]
+    [SerializeField] private float eventFloatParam = 0;
+    [SerializeField] private int eventIntParam = 0;
+    [SerializeField] private string eventStringParam = "";
+    [SerializeField] private Object eventObjectRefParam = null;
 
     private void Start()
     {
-        PassObjectToAnimationEventsInList(punchAnimations, punchObject);
-        PassObjectToAnimationEventsInList(kickAnimations, kickObject);
+        List<AnimationClip> anims = new List<AnimationClip>();
+
+        foreach (GameObject fbx in animationFBX_Array)
+        {
+            foreach (AnimationClip clip in AnimationUtility.GetAnimationClips(fbx))
+            {
+                anims.Add(clip);
+            }
+        }
+
+        PassParametersToAnimationEvents(anims, eventFloatParam, eventIntParam, eventStringParam, eventObjectRefParam);
     }
 
-    private void PassObjectToAnimationEventsInList(List <AnimationClip> anims, Object o) 
+    private void PassParametersToAnimationEvents(List<AnimationClip> clips, float f, int i, string s, Object o) 
     {
-        foreach (AnimationClip c in anims)
+        foreach (AnimationClip clip in clips) 
         {
-            AnimationEvent e = c.events[0];
-            e.objectReferenceParameter = o;
-        }            
+            AnimationEvent [] events = AnimationUtility.GetAnimationEvents(clip);
+
+            foreach (AnimationEvent e in events) 
+            {
+                e.floatParameter = f;
+                e.intParameter = i;
+                e.stringParameter = s;
+                e.objectReferenceParameter = o;
+            }
+        }
     }
 }
+#endif

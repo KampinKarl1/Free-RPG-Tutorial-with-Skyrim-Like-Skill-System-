@@ -28,6 +28,7 @@ public class Skill : ScriptableObject
 
     public void IncreaseSkill(float xp) 
     {
+        Debug.Log("Earned " + xp.ToString() +" xp");
         currentXP += xp;
 
         if (currentXP >= xpToNextLevel) 
