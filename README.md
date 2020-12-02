@@ -40,8 +40,8 @@ Watch the videos here: https://www.youtube.com/playlist?list=PL8uuriBnyf5n48pmtn
 #Explosive RPG Anim Pack Input Fix
 
 
-Nov. 7 2020 (Biden wins Pres. Elec. in USA) 
-Changes to include targeting. 
+
+Super Duper Important Changes to include targeting. 
 ----------------------------------------------------------------------------------
 Added some code to CombatTest.cs to include targeting nearest enemy.
 Made changes to InputController.cs to reference CombatTest to call for enemy targeting.
