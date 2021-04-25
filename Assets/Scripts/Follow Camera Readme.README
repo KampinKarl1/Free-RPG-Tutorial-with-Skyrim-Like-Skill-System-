@@ -1,0 +1,17 @@
+Create a Gameobject and name it CameraBoom (or whatever). 
+Child the Object to your player - Or the object it's going to follow.
+Reset it's position in the Transform component.
+Unchild the object.
+
+Child the main camera to the object/Camera Boom.
+In the 'Game' tab of the inspector, give the Camera object an offset from the object you want it to follow
+    A position of X: -.25, Y: 7, Z: -7 
+    and rotation of X:30, Y: 2, Z: 0 is pretty good to focus on the back of the followed object.
+   
+   
+Attach the FollowCamera.cs script to the CameraBoom and set the player to the target object field.
+
+The script uses Input.GetAxis and the Mouse Y and Mouse X defaults to rotate around the target.
+
+If you're using an XBox Controller, make sure to set Edit/Project Settings/Input Manager/Axes - "Mouse X" to Type.Joystick axis on the 4th axis, "Mouse Y" to the 5th axis,
+Gravity and Sensitivity for both to 1 and Dead to .2 (.2 will ignore minute movements or irregularities with the joysticks.
