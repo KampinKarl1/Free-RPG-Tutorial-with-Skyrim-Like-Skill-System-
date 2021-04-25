@@ -1,6 +1,13 @@
 # Free-RPG-Tutorial-with-Skyrim-Like-Skill-System-
 
 ---
+If you aren't seeing the level bar moving up as you gain skill points:
+You probably have missing sprites on the Level_Panel (Level_UI) on the Cavas. Make sure that the "Main Level BG" and its child, "Main Level Fill", Image components have sprites that are set to ImageType.Filled (and that the sprite isn't missing). I use a white .png file that's 128x16 pixels and that works well for a basic fill bar.
+
+If the RPG Character Controller system is throwing a bunch of errors, check your layers and make sure you have the Walkable and TempCast layers (in the same place as Explosive has them in their Readme) - Their system is great but it doesn't work out of the box. Make sure you copy the Input Manager from here into your ProjectSettings (Back yours up if you're throwing it onto a project you've been working on).
+---
+
+---
 Please get the following free assets FIRST, add them to a project, THEN clone this project. Otherwise you'll have a bunch of broken stuff.
 ---
 
