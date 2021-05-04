@@ -1,5 +1,7 @@
 # Free-RPG-Tutorial-with-Skyrim-Like-Skill-System-
 
+Take a look at how a game might work (poorly) with this system: https://play.unity.com/p/webgl-builds-46785
+
 ---
 If you aren't seeing the level bar moving up as you gain skill points:
 You probably have missing sprites on the Level_Panel (Level_UI) on the Cavas. Make sure that the "Main Level BG" and its child, "Main Level Fill", Image components have sprites that are set to ImageType.Filled (and that the sprite isn't missing). I use a white .png file that's 128x16 pixels and that works well for a basic fill bar.
